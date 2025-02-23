@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESATUNIK</title>
+    <style>
+        body {
+		background: linear-gradient(135deg, #1e3c72, #2a5298); /* Sama seperti beranda */
+		color: white; /* Agar teks terlihat jelas */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+		@keyframes floating {
+    0% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-55%) translateX(10px); }
+    100% { transform: translateY(-50%) translateX(0); }
+}
+
+#home {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    color: white;
+    padding: 120px;
+    border-radius: 5px;
+    position: relative;
+}
+.home-header {
+    width: 30%; /* Lebar penuh */
+    max-height: 200px; /* Sesuaikan tinggi */
+    object-fit: cover; /* Agar gambar tidak terdistorsi */
+    border-radius: 0px 0px 0 0; /* Sudut atas membulat */
+    position: relative;
+    top: -70px; /* Naikkan gambar */
+}
+
+/* Pastikan konten di bawahnya tidak tertutup */
+#home-content {
+    padding-top: 0px; /* Hilangkan jarak ekstra */
+    margin-top: -50px;
+}
+
+#home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home .home-images {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px; /* Ukuran sedang */
+    height: auto;
+}
+
+#home .home-left {
+    left: 10%; /* Posisikan di tengah kiri */
+}
+
+#home .home-right {
+    right: 10%; /* Posisikan di tengah kanan */
+}
+nav {
+            background: #007bff;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffdd57;
+        }
+        .content {
+            padding: 20px;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .profile-container {
+    text-align: left; 
+    padding: 20px;
+    background: #cac351;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.profile-container img {
+    display: block; /* Membuat gambar menjadi blok */
+    margin: 0 auto; /* Membuat gambar tetap berada di tengah */
+    width: 150px; /* Tentukan ukuran gambar */
+    height: 150px; /* Tentukan ukuran gambar */
+    border-radius: 50%; /* Membuat gambar jadi bulat */
+}
+        .student-list {
+    display: flex;
+    flex-wrap: wrap;  /* Agar elemen bisa pindah baris jika ruang terbatas */
+    justify-content: space-evenly;  /* Menyebarkan item secara merata */
+    gap: 10px;  /* Menambahkan jarak antar item */
+}
+        .student-list a {
+    display: inline-block;
+    padding: 40px;
+    background: #cac351;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    width: calc(25% - 10px);  /* 4 item per baris dengan margin */
+    box-sizing: border-box;
+    transition: background 0.3s;
+	font-size: 18px;
+}
+        .student-list a:hover {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);;
+        }
+        .back-link {
+    color: red;  /* Mengubah warna teks menjadi merah */
+    text-decoration: none;  /* Menghapus garis bawah */
+    font-size: 16px;  /* Ukuran font bisa disesuaikan */
+}
+
+.back-link:hover {
+    color: #d32f2f;  
+    text-decoration: underline;  
+}
+
+		
+  .label {
+    color: #3e5dc2;
+   font-weight: bold;
+}
+#instagram a {
+    color: red;  /* Mengubah warna teks menjadi merah */
+    text-decoration: none;  /* Menghapus garis bawah */
+    font-weight: bold;  /* Menebalkan teks jika diperlukan */
+}
+
+#instagram a:hover {
+    color: #d32f2f;  /* Warna merah lebih gelap saat di-hover */
+    text-decoration: underline;  /* Garis bawah muncul saat hover */
+}
+#gallery {
+    position: relative;
+    height: 230vh;  /* Membuat galeri memiliki tinggi dua kali ukuran layar untuk scroll */
+    overflow: auto;  /* Agar halaman bisa discroll */
+}
+
+.background-images {
+    height: 100%;  /* Menjamin gambar mengisi container */
+    background-image: url('kol2.jpg'), url('kol3.jpg');
+    background-position: top center, bottom center;  /* Posisi gambar di atas dan bawah */
+    background-size: 100% auto;  /* Gambar mengikuti lebar container dan menjaga proporsi */
+    background-repeat: no-repeat;
+}
+#credits {
+    padding: 20px;
+    text-align: center;
+}
+
+.credit-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.credit-list li {
+    margin: 10px 0;
+    font-size: 18px;
+    background-color: #cac351;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.credit-list li:hover {
+    background-color: #e0e0e0;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <a onclick="showPage('home')">Beranda</a>
+        <a onclick="showPage('wali-kelas')">Wali Kelas</a>
+        <a onclick="showPage('murid')">Murid</a>
+        <a onclick="showPage('gallery')">Galeri</a>
+        <a onclick="showPage('instagram')">Instagram</a>
+		<a onclick="showPage('credits')">Credit</a>
+    </nav>
+
+    <div id="home" class="content active">
+	<img src="SESAT UNIK2.png" class="home-header" alt="Header Kelas">
+    <img src="SESAT UNIK1.PNG" class="home-images home-left" alt="Gambar Kiri">
+    <img src="SESAT UNIK1.PNG" class="home-images home-right" alt="Gambar Kanan">
+
+    <div id="home-content">
+        <h1>Selamat Datang di</h1>
+        <img src="SESAT UNIK3.PNG" alt="Logo Kelas" width="150">
+        <h2>Nama Kelas: 12-1</h2>
+        <p>Jumlah Murid: 13</p>
+        <p>Wali Kelas: Dedi Gojali</p>
+    </div>
+</div>
+<div id="credits" class="content">
+    <h1>YANG BIKIN WEB INI</h1>
+    <ul class="credit-list">
+        <li onclick="showPage('murid1')">Neyney</li>
+        <li onclick="showPage('murid2')">Zahra</li>
+        <li onclick="showPage('murid3')">Bagus</li>
+        <li onclick="showPage('murid11')">Nipari</li>
+        <li onclick="showPage('murid12')">Rapip</li>
+        <li onclick="showPage('murid13')">Zaed</li>
+    </ul>
+</div>
+
+<div id="wali-kelas" class="content">
+        <h1>Wali Kelas</h1>
+        <div class="profile-container">
+            <img src="paededd.jpeg" alt="Wali Kelas">
+			<h2>Dedi Gojali</h2>
+            <p><span class="label">Tempat Tanggal Lahir:</span> Karawang, 27 Agustus 1993</p>
+        <p><span class="label">Kesan:</span> Super sekali</p>
+        <p><span class="label">Pesan:</span> Teruslah berbuat baik pada siapapun</p>
+        </div>
+    </div>
+
+    <div id="murid" class="content">
+    <h1>Daftar Murid</h1>
+    <div class="student-list">
+        <script>
+            const studentNames = [
+                "Neyney", "Zahra", "Bagus", "Darma", "Gusti", "Hani", "Lutpi",
+                "Affa", "Parel", "Iqbal", "Nipari", "Rapip", "Zaed"
+            ];
+            
+            studentNames.forEach((name, index) => {
+                document.write(`<a onclick="showPage('murid${index + 1}')">${name}</a>`);
+            });
+        </script>
+    </div>
+</div>
+<div id="gallery" class="content">
+    <div class="background-images"></div>
+</div>
+<div id="instagram" class="content">
+        <h1>Instagram Kelas</h1>
+        <p>Ikuti kita di Instagram</p>
+        <a href="https://www.instagram.com/sesatunik" target="_blank">Kunjungi Instagram (klik)</a>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.content').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        const studentData = [
+            { panggilan: "Neyney", name: "Ariadne Delphina Chestralova", birthdate: "Karawang, 25 Agustus 2006", image: "ney.jpeg", message: "Aku sayang 12.1 apalagi klompok ganjil", pesan: "sosolah" },
+            { panggilan: "Zahra", name: "Azzahra Nur Fahiraa", birthdate: "Bandung, 12 Juli 2007", image: "zahra.jpeg", message: "Ganyangka banget wow sekelas cuma 13 orang dan 10 cowo 3 cewe, kerasa banget bedanya sama kelas lain yang banyak cewenya yaa. Kadang iri sih cewenya banyak gitu di kelas (hani selalu ngilang) (neyney selalu tidur) jadi aku gapunya teman ngobrol huhu hiks, tapi yaa gitu mau gimana lagi kan orang GASENGAJA MILIH TEKNIK hehe. tapi seru dan cape, capenya gara gara selalu diomongin guru karena gapunya semangat hidup dan selalu cari masalah 😎☝🏻 serunya karena lucu aja dengerin cowo cowo itu ngomong random… apalagi gimmick gamau belajar (ada aja yang dibahas biar ga belajar) dan ngerasa lebih kompak aja #respect HIDUP TEKNIK!!!!!", pesan: "Makasih kenangannya di sma, walaupun cuma 2 tahun  ganyangka bakal sekelas sama kaliann <33" },
+            { panggilan: "Bagus", name: "Bagus Anugrah Gusti", birthdate: "Jakarta, 29 Agustus 2007", image: "bagus.jpeg", message: "Seru2 ada baik buruknya", pesan: "Semoga sukses masing2" },
+			{ panggilan: "Darma", name: "Darma Winata Suganda", birthdate: "Karawang, 2 desember 2006", image: "dar.jpeg", message: "Sangat seru dan terharu karna bisa se kompak ini", pesan: "Semoga kalian bisa sukses dan tetap kompak" },
+			{ panggilan: "Gusti", name: "Gusti Rinakit Yusuf Wijaya", birthdate: "Jakarta, 21 Juni 2007", image: "gusti.jpeg", message: "Masa kelas 12 disini bagi gw masa yang paling asik, smp asik si tapi ga seasik sekarang ini, semua momen seru di kelas 12 ini pengen gw abadiin dengan fotoo, makannya gw lagi sering bilang “mamah butuh kabar” wkwkkwk padahal gw emg cuma pengen abadiin momen ajaa sama lu padaa, gw gabakal lupain lu pada, jangan lupain gw ya gaiss", pesan: "Sukses sukses lu semuaa see yall on top :)" },
+			{ panggilan: "Hani", name: "Hanifa Dwi Aulia", birthdate: "Cirebon, 30 Agustus 2007", image: "hani.jpeg", message: "Wow bgt teknik anjay. gatau lagi apa. pokonya teknik tuh teknik bgt. wow bgt. ga nyangka bisa temenan sm kalian (yeay).", pesan: "Makasih ya, kenangannya top bgt deh" },
+			{ panggilan: "Lutpi", name: "Luthfi Kharis", birthdate: "Semarang, 20 September 2006", image: "lutpi.jpeg", message: "Seru banget bisa bareng sama kalian semua", pesan: "makasih buat semua nya udah mau nemenin gw" },
+			{ panggilan: "Affa", name: "Muhammad Alfathara Fakhri Adysya", birthdate: "Semarang, 12 Januari 2007", image: "affa.jpeg", message: "2 tahun kayanya bentar banget ya? Cuma mau bilang makasih banyak buat semua kenangan yang udah bareng-bareng kita bikin selama 2 tahun ini, banyak yg udah kita lewatin, semuanya dilakuin bareng bareng, ngerangkul satu sm lain gaada yg di diemin🤗, pokoknya semuanya dah mantap mantap. Jangan sampe pada lupa dah satu sm lain, terima kasih sudah ada woww meledagh See you on top😋", pesan: "If the goodbye hurts, that means you've spent your time well" },
+			{ panggilan: "Parel", name: "Muhammad Faris Alfarrel", birthdate: "Bekasi, 3 April 2007", image: "parel.jpeg", message: "Banyak pertemanan yang nyaman yang ada di kelas ini,banyak tawa dan tugas yg bikin capek sendiri, gw gabakal ngira 2 tahun bersama kalian sangat memorable di hati gw", pesan: "Andai kalo kita ketemu lagi gw berharap kita masi bisa ngobrol lagi kayak kita di kelas 12.1 gw doakan cita2 kalian yang kalian ceritakan ke gw. Love you Guyss XXL" },
+			{ panggilan: "Iqbal", name: "Muhammad Iqbal Al Fayyadh", birthdate: "Karawang, 27 Januari 2007", image: "iqbal.jpeg", message: "SMA menurut gua adalah tempat tumbuh berkembang,bertengkar,bermain,bercanda,belajar,berteman, dan jatuh cinta secara bersamaan.", pesan: "Jangan lupa sm gua sm jgn lupa solat" },
+			{ panggilan: "Nipari", name: "Muhammad Niffari Prajnaatara", birthdate: "Karawang, 3 Februari 2007", image: "nip.jpeg", message: "Cuma di kelas ini gua bisa ketawa terus, cuma di kelas ini gua bisa dapet temen seperti kalian, dan cuma di kelas ini gua bisa dapetin kenangan yang nggak bakal gua lupain. Pokoknya, kelas ini nggak akan gua lupain. Kelas Teknik, gacorrr! ", pesan: "Makasi buat temen-temen gua yang selalu solid,gua seneng bisa nyiptain experience bareng kalian, semoga kita masih bisa kumpul kumpul lagi dan ketawa ketawa lagi" },
+			{ panggilan: "Rapip", name: "Rafif Salman Al - Faiz", birthdate: "Bandar Lampung, 9 Agustus 2006", image: "rpip.jpeg", message: "Satu satunya kelas yang bikin gw bisa eksplor lebih jauh lagi tentang semua hal. Entah itu dalam hal pembelajaran maupun persahabatan. Suka duka selalu kita lalui bersama-sama, gaada yang bisa misahin kita, jujur  gw bingung mau ngomong apa aja, banyak banget hal yang ingin gw sampein ke kalian semua, tapi rasanya kata-kata gw nggak cukup indah untuk menggambarkan kebahagiaan gw berada di kelas ini. Andai waktu bisa terus bersama kita... Tapi seperti halnya perjalanan yang panjang, selalu ada pemberhentian, bukan perpisahan, karena gw gamau pisah sama orang-orang yang ada di kelas ini, lu pada udh jadi bagian dari cerita hidup gw yang nggak ternilai harganya. Tentang kelas ini... mungkin ini adalah kehidupan sosial terbaik yang pernah gw alami. UNIK ya... 10 cowo 3 cewe, tapi kita bisa se-solid dan se-brutal ini, selalu ada tawa, semangat, dan hal hal yg bahkan gw ganyangka bakal ada di hidup gw, gw tadinya bingung mau masukin apa aja disini, tapi ternyata SESATUNIK yg bantu gw nyusun kata2 ini.", pesan: "10 miliar persen kita bakal ketemu di pucuk" },
+			{ panggilan: "Zaed", name: "Zaed Abidin", birthdate: "Karawang, 23 Juni 2007", image: "zaed.jpeg", message: "Sangat berkesan", pesan: "Suksessss" },
+        ];
+
+        studentData.forEach((student, index) => {
+            document.body.innerHTML += `
+                <div id="murid${index + 1}" class="content">
+                    <h1>Profil ${student.panggilan}</h1>
+                    <div class="profile-container">
+                        <img src="${student.image}" alt="${student.name}">
+                        <h2>${student.name}</h2>
+                        <p><span class="label">Tempat Tanggal Lahir:</span> ${student.birthdate}</p>
+<p><span class="label">Kesan:</span> ${student.message}</p>
+<p><span class="label">Pesan:</span> ${student.pesan}</p>
+                    </div>
+                    <a class="back-link" onclick="showPage('murid')">Kembali ke Daftar Murid</a>
+                </div>`;
+        });
+    </script>
+</body>
+</html>
